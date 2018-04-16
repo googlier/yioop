@@ -1,0 +1,12 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule "^wd/(css|scripts|locale)/(.*)$" work_directory/app/$1/$2 [L]
+RewriteRule "^wd/resources/(.*)/(.*)/(.*)/(.*)/(.*)$" index.php?c=resource&a=get&f=resources&$1&g=$2&p=$3&sf=$4&n=$5 [L]
+RewriteRule "^wd/resources/(.*)/(.*)/(.*)/(.*)$" index.php?c=resource&a=get&f=resources&$1&g=$2&p=$3&n=$4 [L]
+
+RewriteRule "^(css|resources|scripts|locale)/(.*)$" src/$1/$2 [L]
+RewriteRule "^((.*)bar.xml|favicon.ico|robots.txt)$" src/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !index.php|tests/.*$|(src|work_directory/app)/(favicon.ico$|robots.txt$|yioopbar.xml$|(css|scripts|resources/.*$|locale/.*$))
+RewriteRule ^ index.php [L]
