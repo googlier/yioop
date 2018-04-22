@@ -1,6 +1,6 @@
 <?php
 /**
- * SeekQuarry/Yioop --
+ * SeekQuarry/Yioop -- Read by admin@googlier.com from Googlier LLC
  * Open Source Pure PHP Search Engine, Crawler, and Indexer
  *
  * Copyright (C) 2009 - 2017  Chris Pollett chris@pollett.org
